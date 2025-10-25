@@ -1,0 +1,224 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 64px 16px;
+  background: radial-gradient(circle at 20% 20%, #f7f3ff 0%, #eef6ff 45%, #f9fafc 100%);
+  font-family: var(--font-geist-sans);
+  color: #1d1d1f;
+}
+
+.main {
+  width: min(960px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5f49d6;
+}
+
+.heading {
+  font-size: clamp(36px, 6vw, 54px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.subheading {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 640px;
+  color: rgba(29, 29, 31, 0.72);
+  text-wrap: balance;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(94, 114, 228, 0.08);
+  box-shadow: 0 20px 45px rgba(107, 119, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cardHeader p {
+  font-size: 14px;
+  color: rgba(29, 29, 31, 0.64);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(29, 29, 31, 0.7);
+}
+
+.label span {
+  font-weight: 500;
+}
+
+.form input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 110, 255, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #5f49d6;
+  box-shadow: 0 0 0 3px rgba(95, 73, 214, 0.12);
+}
+
+.form button {
+  margin-top: 4px;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #5f49d6, #7f9dff);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(95, 73, 214, 0.2);
+}
+
+.suggestion {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(29, 29, 31, 0.78);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.linkList a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(95, 73, 214, 0.12);
+  transition: border-color 0.2s ease, transform 0.1s ease, background 0.2s ease;
+}
+
+.linkList a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(95, 73, 214, 0.28);
+  background: rgba(95, 73, 214, 0.06);
+}
+
+.linkTitle {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.linkDescription {
+  font-size: 13px;
+  color: rgba(29, 29, 31, 0.64);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 40px 16px 80px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background: radial-gradient(circle at 20% 20%, #1f163d 0%, #131b3d 50%, #0f111a 100%);
+    color: #f5f6ff;
+  }
+
+  .subheading {
+    color: rgba(245, 246, 255, 0.7);
+  }
+
+  .card {
+    background: rgba(21, 25, 46, 0.8);
+    border-color: rgba(120, 131, 255, 0.16);
+    box-shadow: 0 20px 40px rgba(12, 15, 35, 0.5);
+  }
+
+  .cardHeader p,
+  .label,
+  .suggestion,
+  .linkDescription {
+    color: rgba(245, 246, 255, 0.68);
+  }
+
+  .form input {
+    background: rgba(15, 18, 36, 0.9);
+    border-color: rgba(120, 131, 255, 0.2);
+    color: inherit;
+  }
+
+  .linkList a {
+    border-color: rgba(120, 131, 255, 0.2);
+    background: rgba(20, 25, 49, 0.5);
+  }
+
+  .linkList a:hover {
+    background: rgba(120, 131, 255, 0.18);
+  }
+}
